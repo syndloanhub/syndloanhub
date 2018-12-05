@@ -42,7 +42,7 @@ pushd $DESTDIR
 unzip -o ${ZIP_FILE}
 popd
 
-python ${BIN}/import_markitir.py --input_file ${DESTDIR}/InterestRates_USD_${YYYYMMDD}.xml --output_file ${DESTDIR}/markitir.csv --date ${YYYYMMDD}
+python3 ${BIN}/import_markitir.py --input_file ${DESTDIR}/InterestRates_USD_${YYYYMMDD}.xml --output_file ${DESTDIR}/markitir.csv --date ${YYYYMMDD}
 
 exit $?
 

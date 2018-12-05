@@ -49,7 +49,7 @@ with open(args.output_file) as csvfile:
             logging.warn('discarding %s' % str(row))
             continue
 
-        if not irrates.has_key(key):
+        if key not in irrates:
             irrates[key] = dict()
 
         irrates[key][date] = rate
@@ -62,7 +62,7 @@ currency = root.find('currency').text
 for el in root.findall('./deposits/curvepoint'):
     key = '%s-LIBOR-%s' % (currency, el.find('tenor').text)
 
-    if not irrates.has_key(key):
+    if key not in irrates:
         irrates[key] = dict()
 
     irrates[key][obsdate] = el.find('parrate').text
